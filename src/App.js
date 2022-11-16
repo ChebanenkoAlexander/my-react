@@ -1,16 +1,36 @@
-import logo from './logo.svg';
+import {Component, StrictMode} from 'react';
 import './App.css';
 
+const Header = () => {
+  return <h2>Учу React, урок 124.</h2>
+}
+
+class Field extends Component {
+  render() {
+    const holder = "Введите текст";
+    const styledField = {
+      with: '300px'
+    };
+    return <input
+        placeholder={holder}
+        type ="text"
+        style = {styledField}/>
+  }
+}
+function Btn() {
+  const text = "Нажми меня";
+  const logged = false;
+
+  return <button>{logged ? "Ввод" : text}</button>
+}
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-       
-      </header>
+      <StrictMode>
+        <Header/>
+      </StrictMode>
+      <Field/>
+      <Btn/>
     </div>
   );
 }
